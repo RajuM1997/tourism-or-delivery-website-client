@@ -1,0 +1,39 @@
+.bashboard-manu {
+    background: #053bcee3;
+    height: 100vh;
+}
+
+.user {
+    color: #fff;
+}
+
+.user img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.all-order li {
+    list-style: none;
+}
+
+.all-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.active {
+    background: rgba(221, 217, 217, 0.376);
+    border-radius: 10px;
+}
+
+.all-order:hover {
+    background: rgba(221, 217, 217, 0.376);
+    border-radius: 10px;
+}

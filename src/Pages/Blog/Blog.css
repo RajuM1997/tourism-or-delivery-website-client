@@ -1,0 +1,20 @@
+.blog .active {
+    cursor: pointer;
+    transform: scale(1.07);
+    box-shadow: 10px 6px 7px rgba(128, 128, 128, 0.787);
+}
+
+.blog .card {
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.blog .card:hover {
+    transform: scale(1.01);
+    box-shadow: 10px 6px 7px rgba(128, 128, 128, 0.787);
+}
+
+
+.comment-icon .far {
+    color: rgba(184, 11, 11, 0.664);
+}

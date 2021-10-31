@@ -1,0 +1,56 @@
+[
+  {
+    "location": "ITALY",
+    "title": "COSTA RICA TOUR",
+    "reviw": "32 REVIEWS",
+    "duration": "FULL DAY",
+    "description": "An eco-tourist's dream, Costa Rica has become synonymous with all an unspoiled tropical paradise can be. Rarely does reality measure up to hype, but Costa Rica certainly comes close. The country's quiet history as a backwater free of colonial excesses has today become a boon, and Costa Rica has cashed in on its purity. And not without merit: blessed with beaches and biodiversity, this is a verdant land of misty volcanoes, roaring rivers, and lush jungles teeming with exotic fauna. Throw in the friendly, educated Ticos (as Costa Ricans are known) and you can see why down here they call it Pura Vida",
+    "price": 270,
+    "image": "https://i.ibb.co/6nW71wM/travel-1.jpg"
+  },
+  {
+    "location": "AFRICA",
+    "title": "FUN IN THE WOODS",
+    "reviw": "15 REVIEWS",
+    "duration": "FULL DAY",
+    "description": "There are a few levers you can pull to help your response rate, although whether it’s feasible for you is going to come down to the kind of research you’re trying to do and how much money/ resources you have.I’m assuming you’re trying to do this as cost-effectively as possible, so here are a few ideas:",
+    "price": 420,
+    "image": "https://i.ibb.co/7VsL1K9/travel-2.jpg"
+  },
+  {
+    "location": "SYDNEY",
+    "title": "HONEYMOON PACKAGE",
+    "reviw": "5 REVIEWS",
+    "duration": "FULL DAY",
+    "description": "If you are planning your first romantic vacation, then we have loads of honeymoon packages on offer. No country gives you options of more places and ways to spend your first few days together, than Whether your idea of a honeymoon involves adventure, sightseeing, beholding natural vistas or just spending time with each other in privacy, we have a package for you. Among all the honeymoon destinations in ",
+    "price": 340,
+    "image": "https://i.ibb.co/6wsk6T3/travel-3.jpg"
+  },
+  {
+    "location": "LONDON",
+    "title": "EUROPE NIGHTMARE",
+    "reviw": "3 REVIEWS",
+    "duration": "FULL DAY",
+    "description": "After a sluggish start, the European Union’s vaccination campaign finally picked up the pace. By mid-May, the EU’s rate of vaccination was broadly in line with the U.S. and the U.K. after having trailed both for months. It also clinched a deal with Pfizer-BioNTech for a further 1.8 billion doses through to 2023 and hopes to conclude negotiations with the U.S. biotechnology company Novavax soon",
+    "price": 150,
+    "image": "https://i.ibb.co/yW0SkKt/travel-4.jpg"
+  },
+  {
+    "location": "BANGLADESH",
+    "title": "SRIMANGAL TOUR",
+    "reviw": "10 REVIEWS",
+    "duration": "FULL DAY",
+    "description": "Tourists like to visit various spots such as the Tea Research Institute, Wildlife Service Foundation, Hail Haor, Bird Park and numerous other attractions in Sreemangal. PHOTO: MINTU DESHWARA. Tourism in Sreemangal upazila of Moulvibazar has started to bounce back after suffering massive losses from the coronavirus pandemic that has affected almost all sectors of the economy. Traders in the area are very pleased with the increasing number of tourists and believe that business in the sector will continue to improve if people follow the health regulations to steer clear of infections.",
+    "price": 200,
+    "image": "https://i.ibb.co/wcxv3Gp/travel-5.jpg"
+  },
+  {
+    "location": "INDIA",
+    "title": "KERAAA TOUR",
+    "reviw": "8 REVIEWS",
+    "duration": "FULL DAY",
+    "price": 300,
+    "description": "Kerala Travel Guidelines - Fully vaccinated tourists do not require an RTPCR Report. All the major Hotels, Resorts & Houseboats are allowed to function, except in Containment Zones. Ministry of tourism, Safety & Hygiene Protocols and Operational Recommendations for Tourism Service Providers are followed by Resorts and Hotels.It is compulsory for guests visiting Kerala should have at least one dose of COVID-19 vaccine before two weeks *OR* Who are in possession of RT-PCR negative certificate taken 72 hours before arrival to Kerala tourism destinations *OR* Who is in possession of COVID-19 positive results more than a month old",
+    "image": "https://i.ibb.co/Lk2GYYk/travel-6.png"
+  }
+]

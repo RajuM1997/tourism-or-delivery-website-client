@@ -1,0 +1,110 @@
+body {
+    overflow-x: hidden;
+}
+
+/* .banner-section {
+    background: url(''),
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    height: 100vh;
+    width: 100%;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+} */
+
+.carousel-img {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background-blend-mode: overlay;
+    max-height: 500px;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.caption {
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+
+.carousel-btn {
+    background: transparent;
+    padding: 10px 50px;
+    color: #fff;
+    border: 1px solid rgb(0, 255, 191);
+    outline: none;
+    font-size: 17px;
+    transition: all 0.5s;
+}
+
+.carousel-btn:hover {
+    background: rgb(0, 255, 191);
+    color: #000;
+}
+
+.carousel-text {
+    color: blue;
+    font-size: 30px;
+}
+
+.banner-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+}
+
+.banner-main h1 {
+    color: rgba(255, 255, 255, 0.849);
+    font-size: 2.6rem;
+    font-weight: 700;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Permanent Marker',
+        cursive;
+}
+
+.banner-main small {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: 'Lobster',
+        cursive;
+}
+
+.call-btn {
+    background: rgb(4, 194, 200);
+    padding: 10px 45px;
+    border: none;
+    outline: none;
+    color: #000;
+    font-weight: 500;
+    border-radius: 5px;
+
+}
+
+.carousel-control-prev-icon {
+    display: none !important;
+}
+
+.carousel-control-next-icon {
+    display: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .carousel-img {
+        max-height: 100%;
+        object-fit: cover;
+    }
+
+    .caption {
+        position: absolute;
+        top: 30%;
+    }
+}
