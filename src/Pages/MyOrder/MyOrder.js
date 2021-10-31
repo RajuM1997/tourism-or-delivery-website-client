@@ -29,7 +29,7 @@ const MyOrder = () => {
         .then((data) => {
           if (data.deletedCount) {
             setIsDelete(!isDelete);
-            swal("Good job!", "deleted success", "success");
+            swal("Good job!", "deleted successfull", "success");
           } else {
             setIsDelete(false);
           }

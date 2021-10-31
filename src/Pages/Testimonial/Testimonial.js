@@ -22,7 +22,7 @@ const Testimonial = () => {
                 alt="..."
               />
               <div className="card-body text-center">
-                <h5 className="card-title">Sally Morgan</h5>
+                <h5 className="card-title">Alex Or</h5>
 
                 <p className="card-text">
                   There’s a growing appreciation for Meteora wines, and the
@@ -74,7 +74,7 @@ const Testimonial = () => {
                 alt="..."
               />
               <div className="card-body text-center">
-                <h5 className="card-title">Sally Morgan</h5>
+                <h5 className="card-title">Jio Mark</h5>
 
                 <p className="card-text">
                   b The trail is only accessible by the “Via Cordata”, which

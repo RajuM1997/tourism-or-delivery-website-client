@@ -35,7 +35,9 @@ const OrderPlace = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          swal("Good job!", "You clicked the button!", "success");
+          swal(
+            ` "Good job!", ${user.displayName}, your order successfull , "success" `
+          );
           setResult();
         }
       });

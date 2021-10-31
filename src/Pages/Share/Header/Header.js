@@ -10,7 +10,9 @@ const Header = () => {
   return (
     <Navbar className="custome-bg" variant="dark" expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand href="#">TravelBea</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          TravelBea
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

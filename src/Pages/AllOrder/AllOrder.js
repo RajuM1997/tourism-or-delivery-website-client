@@ -28,7 +28,7 @@ const AllOrder = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount) {
-            swal("Good job!", "You clicked the button!", "success");
+            swal("Good job!", "deleted successfully!", "success");
             setIsDelete(!isDelete);
           } else {
             setIsDelete(false);

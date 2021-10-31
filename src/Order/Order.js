@@ -15,7 +15,7 @@ const Oder = () => {
         <h1 className="text-center pb-5">I am Dashboard {orders.length}</h1>
         <div className="all-products">
           <div className="row container text-center">
-            {orders?.map((pd, index) => (
+            {orders?.map((pd) => (
               <div className="col-md-6 col-lg-4">
                 <div className=" border border p-2 m-2">
                   <div className="img">
