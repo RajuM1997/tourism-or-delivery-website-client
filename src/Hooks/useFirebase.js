@@ -10,13 +10,16 @@ import {
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/Firebase/firebase.init";
+
 initializeAuthentication();
 
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [admin, setAdmin] = useState(false);
   const auth = getAuth();
+  const [shaw, setShaw] = useState(false);
 
   //user state
   useEffect(() => {
@@ -29,7 +32,7 @@ const useFirebase = () => {
       setIsLoading(false);
     });
     return () => unsubscribe();
-  }, []);
+  }, [auth]);
 
   //sign in with google accout
   const signInWithGoogle = () => {
@@ -48,23 +51,31 @@ const useFirebase = () => {
   };
 
   //handle user name
-  const createUserName = (name) => {
+  const createUserName = (email, name) => {
     updateProfile(auth.currentUser, {
       displayName: name,
+      // email: email,
     })
       .then(() => {
         const newUser = { ...user, displayName: name };
         setUser(newUser);
+        saveUser(email, name, "post");
+        console.log(email, name);
+        setError("");
       })
       .catch((error) => {
         setError(error.message);
       });
   };
 
-  //user log out functionalti
+  useEffect(() => {
+    fetch(`http://localhost:4500/users/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin));
+  }, [user.email]);
 
+  //user log out functionalti
   const handleLogOut = () => {
-    console.log("logouttttt");
     signOut(auth)
       .then(() => {
         setUser({});
@@ -74,8 +85,20 @@ const useFirebase = () => {
       });
   };
 
+  const saveUser = (email, displayName, method) => {
+    const user = { email, displayName };
+    fetch("http://localhost:4500/users", {
+      method: method,
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    }).then();
+  };
+
   return {
     user,
+    admin,
     error,
     setError,
     setUser,
@@ -86,6 +109,9 @@ const useFirebase = () => {
     setIsLoading,
     handleLogOut,
     createUserName,
+    saveUser,
+    shaw,
+    setShaw,
   };
 };
 

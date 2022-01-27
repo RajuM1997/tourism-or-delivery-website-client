@@ -10,10 +10,11 @@ const OrderPlace = () => {
 
   const { id } = useParams();
   const [singlePack, setSingleProduct] = useState({});
-  const [result, setResult] = useState(false);
+  const [status, setStatus] = useState("pending");
+  // const [result, setResult] = useState(false);
 
   useEffect(() => {
-    fetch(`https://eerie-demon-56840.herokuapp.com/package/${id}`)
+    fetch(`http://localhost:4500/package/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setSingleProduct(data);
@@ -22,12 +23,13 @@ const OrderPlace = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-    fetch(`https://eerie-demon-56840.herokuapp.com/order`, {
+    data.status = status;
+    fetch(`http://localhost:4500/order`, {
       method: "post",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -38,7 +40,7 @@ const OrderPlace = () => {
           swal(
             ` "Good job!", ${user.displayName}, your order successfull , "success" `
           );
-          setResult();
+          reset();
         }
       });
   };

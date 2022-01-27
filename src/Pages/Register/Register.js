@@ -1,9 +1,10 @@
 import Button from "react-bootstrap/Button";
 import React, { useState } from "react";
 import { Container, Form } from "react-bootstrap";
-import { useHistory, useLocation } from "react-router";
-import useAuth from "../../Hooks/useAuth";
+import { useNavigate, useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
+import useAuth from "../../Hooks/useAuth";
 
 const Register = () => {
   const {
@@ -14,9 +15,10 @@ const Register = () => {
     createUserName,
     error,
     setError,
+    saveUser,
   } = useAuth();
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   const url = location.state?.from || "/home";
 
@@ -40,10 +42,11 @@ const Register = () => {
     e.preventDefault();
     createAccountWithGoogle(email, password)
       .then((res) => {
+        swal("Good job!", "Register successfull", "success");
         setIsLoading(true);
-        createUserName(name);
+        createUserName(email, name);
         setUser(res.user);
-        history.push(url);
+        navigate(url, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
@@ -55,9 +58,12 @@ const Register = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((res) => {
+        swal("Good job!", "Register successfull", "success");
         setIsLoading(true);
-        setUser(res.user);
-        history.push(url);
+        const user = res.user;
+        console.log(user);
+        saveUser(user.email, user.displayName, "put");
+        navigate("/home");
       })
       .catch((error) => {
         setError(error.message);
@@ -75,7 +81,7 @@ const Register = () => {
             <Form.Label>Name</Form.Label>
             <Form.Control
               onBlur={handleChangeName}
-              type="name"
+              type="text"
               placeholder="Enter Name"
             />
             <Form.Text className="text-muted">
@@ -108,13 +114,10 @@ const Register = () => {
           <h3>
             Already You Have A Account..?? <Link to="/Login">Login</Link>{" "}
           </h3>
-          <Button
-            onClick={handleGoogleSignIn}
-            className="mt-2"
-            variant="success"
-          >
+          <button onClick={handleGoogleSignIn} className="mt-2 login_btn">
+            <i className="fab fa-google-plus-g me-1"></i>
             GoogleSignIn
-          </Button>
+          </button>
         </div>
       </Container>
     </div>

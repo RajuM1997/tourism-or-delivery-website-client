@@ -30,6 +30,6 @@ body {
     object-fit: cover;
 }
 
-.testimonial-icon .fas {
+.testimonial-icon {
     color: rgb(10, 121, 25);
 }

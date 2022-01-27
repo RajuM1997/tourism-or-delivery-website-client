@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Spinner, Table } from "react-bootstrap";
-import useAuth from "../../Hooks/useAuth";
 import swal from "sweetalert";
+import useAuth from "../../../Hooks/useAuth";
 
 const MyOrder = () => {
   const { user } = useAuth();
@@ -44,29 +44,36 @@ const MyOrder = () => {
           <Col className="col-md-12 col-sm-12">
             <Table striped bordered hover>
               <thead>
-                <tr>
+                <tr className="text-center">
+                  <th>#</th>
                   <th>User Name</th>
                   <th>Product Name</th>
-                  <th>Address</th>
-                  <th className="text-center">Email</th>
+                  <th>Email</th>
+                  <th>Adderss</th>
+                  <th>Action</th>
+                  <th>status</th>
                 </tr>
               </thead>
               {!Loading ? (
-                myOrder?.map((items) => (
-                  <tbody className="table-title" key={items?._id}>
-                    <tr>
-                      <td>{items?.name}</td>
-                      <td>{items?.product}</td>
-                      <td>{items?.address}</td>
-                      <td className="">
-                        {items?.email}
-                        <button
-                          onClick={() => handleDelete(items?._id)}
-                          className="delete-btn ms-5"
-                        >
-                          Delete
-                        </button>
+                myOrder?.map((order, index) => (
+                  <tbody>
+                    <tr className="text-center">
+                      <td data-title="#">{index}</td>
+                      <td data-title="User Name">{order?.text}</td>
+                      <td data-title="Product Name">{order?.product}</td>
+                      <td data-title="Email">{order?.email}</td>
+                      <td data-title="Adderss">{order?.address}</td>
+                      <td data-title="Action">
+                        <div className="btn-div">
+                          <span
+                            onClick={() => handleDelete(order?._id)}
+                            className="delete-btn me-2"
+                          >
+                            Delete
+                          </span>
+                        </div>
                       </td>
+                      <td data-title="Adderss">{order?.status}</td>
                     </tr>
                   </tbody>
                 ))

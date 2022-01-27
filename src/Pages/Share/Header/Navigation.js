@@ -3,15 +3,15 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
-import "./Header.css";
+import "./Navigation.css";
 
-const Header = () => {
+const Navigation = () => {
   const { user, handleLogOut } = useAuth();
   return (
     <Navbar className="custome-bg" variant="dark" expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand as={Link} to="/">
-          TravelBea
+        <Navbar.Brand as={Link} to="/" className="nav_link">
+          Travel Trust
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -20,22 +20,19 @@ const Header = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link as={Link} to="/home" className="text-white">
+            <Nav.Link as={Link} to="/home" className="nav_link">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/package" className="text-white">
+            <Nav.Link as={Link} to="/package" className="nav_link">
               Booking
             </Nav.Link>
-            <Nav.Link as={Link} to="/dashborad" className="text-white">
+            <Nav.Link as={Link} to="/dashboard" className="nav_link">
               DashBoard
             </Nav.Link>
-            <Nav.Link as={Link} to="/blog" className="text-white">
+            <Nav.Link as={Link} to="/blog" className="nav_link">
               Blog
             </Nav.Link>
-            <Nav.Link as={Link} to="/faq" className="text-white">
-              FAQ's
-            </Nav.Link>
-            <Nav.Link as={Link} to="/about" className="text-white">
+            <Nav.Link as={Link} to="/about" className="nav_link">
               About
             </Nav.Link>
           </Nav>
@@ -69,4 +66,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navigation;

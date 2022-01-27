@@ -1,9 +1,11 @@
 import Button from "react-bootstrap/Button";
 import React, { useState } from "react";
 import { Container, Form } from "react-bootstrap";
-import { useHistory, useLocation } from "react-router";
-import useAuth from "../../Hooks/useAuth";
+import { useNavigate, useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import "./Login.css";
+import swal from "sweetalert";
+import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
   const {
@@ -13,12 +15,12 @@ const Login = () => {
     setIsLoading,
     error,
     setError,
+    saveUser,
   } = useAuth();
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
-
-  const url = location.state?.from || "/home";
+  const from = location.state?.from?.pathname || "/";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,9 +38,10 @@ const Login = () => {
 
     loginWithEmailAndPassword(email, password)
       .then((res) => {
+        swal("Good job!", "LogIn successfull", "success");
         setIsLoading(true);
         setUser(res.user);
-        history.push(url);
+        navigate(from, { replace: true });
         // ...
       })
       .catch((error) => {
@@ -52,9 +55,12 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((res) => {
+        swal("Good job!", "Login successfull", "success");
         setIsLoading(true);
-        setUser(res.user);
-        history.push(url);
+        const user = res.user;
+        console.log(user);
+        saveUser(user.email, user.displayName, "put");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
@@ -68,7 +74,7 @@ const Login = () => {
       <Container className="py-5 mt-5">
         <small className="text-danger">{error}</small>
         <Form
-          className="w-75 mx-auto "
+          className="w-75 mx-auto"
           onSubmit={handleLoginWithEmailAndPassword}
         >
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -99,13 +105,11 @@ const Login = () => {
           <h3>
             Are you new user..?? <Link to="/register">Regiter</Link>{" "}
           </h3>
-          <Button
-            onClick={handleGoogleSignIn}
-            className="mt-2"
-            variant="success"
-          >
+
+          <button onClick={handleGoogleSignIn} className="mt-2 login_btn">
+            <i className="fab fa-google-plus-g me-1"></i>
             GoogleLogin
-          </Button>
+          </button>
         </div>
       </Container>
     </div>

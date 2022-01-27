@@ -5,6 +5,15 @@ const ChooseUs = () => {
   return (
     <div>
       <div className="container py-5">
+        <div className="main-text pb-5 text-center">
+          <i>
+            <h6 className="text-warning">Why Choose Us?</h6>
+          </i>
+          <h2 className="title">
+            Every Time We Provide <br />
+            Best Service
+          </h2>
+        </div>
         <div className="row">
           <div className="col-md-6">
             <div className="left-side">
@@ -21,15 +30,6 @@ const ChooseUs = () => {
             </div>
           </div>
           <div className="col-md-6">
-            <div className="main-text">
-              <i>
-                <h6 className="text-warning">Why Choose Us?</h6>
-              </i>
-              <h2 className="title">
-                Every Time We Provide <br />
-                Best Service
-              </h2>
-            </div>
             <div className="row pt-3">
               <div className="col-md-6">
                 <div className="chooes">
