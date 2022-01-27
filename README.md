@@ -1,6 +1,21 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## TravelBea
+-live web site link: https://travelbea-69b57.web.app/home
+
+## 24/7 service
+- we provide non stop travel agency service over the years
+
+## e-Booking
+- we have e-service agency services
+
+## free yearly exclusive offer
+-through this website you will notify free yearly exclusive offer
+
+## updated news and services offer
+-we provide up to date travel related news and services offer
+
+## fastest and cheap travel cost 
+-we provide fastest and cheap travel cost compare to other travel agency
 
 ## Available Scripts
 
